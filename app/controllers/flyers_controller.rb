@@ -1,4 +1,5 @@
 class FlyersController < ApplicationController
+  
   # GET /flyers
   # GET /flyers.json
   def index
