@@ -36,6 +36,17 @@ feature "browsing the site" do
   end
   
   scenario "browsing by band" do
+    visit root_url
+    click_link 'By Band'
+    click_link 'Spoon'
+
+    page.should have_content 'Spoon, The Oranges, Treasure State'
+    page.should have_content 'Graceland, Seattle WA'
+    page.should have_content 'October 19, 2002'
+
+    page.should_not have_content 'Neko Case, The Sadies'
+    page.should_not have_content 'Neumos, Seattle WA'
+    page.should_not have_content 'November 27, 2004'
   end
 
   scenario "browsing by venue" do
