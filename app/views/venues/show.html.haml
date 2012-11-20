@@ -1,0 +1,7 @@
+%h1= @venue.name
+
+- @venue.flyers.each do |flyer|
+  .flyer
+    %h2= link_to flyer.band_list, flyer
+    = flyer.venue_full_name
+    = flyer.happened_on.strftime('%B %d, %Y')

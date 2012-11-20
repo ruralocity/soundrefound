@@ -50,6 +50,17 @@ feature "browsing the site" do
   end
 
   scenario "browsing by venue" do
+    visit root_url
+    click_link 'By Venue'
+    click_link 'Neumos, Seattle WA'
+
+    page.should_not have_content 'Spoon, The Oranges, Treasure State'
+    page.should_not have_content 'Graceland, Seattle WA'
+    page.should_not have_content 'October 19, 2002'
+
+    page.should have_content 'Neko Case, The Sadies'
+    page.should have_content 'Neumos, Seattle WA'
+    page.should have_content 'November 27, 2004'
   end
 
   scenario "viewing an individual flyer" do
