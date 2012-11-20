@@ -1,0 +1,3 @@
+= Sound Refound
+
+This application lets me share scans of my collection of concert flyers at [Sound Refound](http://soundrefound.com/). It's a relatively basic Rails 3.2 application with some Twitter Bootstrap thrown in for looks.
