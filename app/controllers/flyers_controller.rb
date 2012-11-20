@@ -59,7 +59,7 @@ class FlyersController < ApplicationController
 
     respond_to do |format|
       if @flyer.update_attributes(params[:flyer])
-        format.html { redirect_to @flyer, notice: 'Flyer was successfully updated.' }
+        format.html { redirect_to @flyer, notice: 'Successfully updated flyer.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

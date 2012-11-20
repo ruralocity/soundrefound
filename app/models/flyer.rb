@@ -25,6 +25,7 @@ class Flyer < ActiveRecord::Base
   private
 
   def create_bands
+    bands.clear
     lineup.to_s.split(',').each do |band|
       band = Band.find_or_create_by_name(band.strip)
       bands << band unless bands.include? band
