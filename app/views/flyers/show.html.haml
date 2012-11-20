@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%h1= @flyer.band_list
+
+%p
+  %b Happened on:
+  = @flyer.happened_on.strftime('%B %d, %Y')
+%p
+  %b Venue:
+  = @flyer.venue_full_name
+%p
+  %b Notes:
+  = @flyer.notes
+
+= link_to 'Edit', edit_flyer_path(@flyer)

@@ -58,5 +58,11 @@ module Soundrefound
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Configure RSpec generators
+    config.generators do |g|
+      g.test_framework :rspec,
+        :view_specs => false
+    end
   end
 end

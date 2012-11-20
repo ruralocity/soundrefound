@@ -1,0 +1,16 @@
+= simple_form_for(@flyer) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :lineup
+    = f.input :happened_on, label: 'Date', as: :string
+    #venue
+      = f.association :venue
+      %p Or create a new one
+      = f.input :new_venue_name, label: 'Name'
+      = f.input :new_venue_city, label: 'City'
+      = f.input :new_venue_state, label: 'State'
+    = f.input :notes
+
+  .form-actions
+    = f.button :submit
