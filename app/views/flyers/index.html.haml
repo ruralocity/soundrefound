@@ -1,23 +1,7 @@
-%h1 Listing flyers
-
-%table
-  %tr
-    %th Happened on
-    %th Venue
-    %th Notes
-    %th
-    %th
-    %th
-
-  - @flyers.each do |flyer|
-    %tr
-      %td= flyer.happened_on
-      %td= flyer.venue
-      %td= flyer.notes
-      %td= link_to 'Show', flyer
-      %td= link_to 'Edit', edit_flyer_path(flyer)
-      %td= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
+- @flyers.each do |flyer|
+  .flyer
+    %h2= link_to flyer.band_list, flyer
+    = flyer.venue_full_name
+    = flyer.happened_on.strftime('%B %d, %Y')
 
 = link_to 'New Flyer', new_flyer_path
