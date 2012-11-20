@@ -15,7 +15,7 @@
     %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72")
     %link(href="images/apple-touch-icon.png" rel="apple-touch-icon-precomposed")
     %link(href="images/favicon.ico" rel="shortcut icon")
-
+    %link(href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css')
 
   %body
     .navbar.navbar-fixed-top
@@ -30,6 +30,10 @@
             %ul.nav
               %li= link_to "By Band", bands_path
               %li= link_to "By Venue", venues_path
+            %ul.nav.pull-right
+              %li= link_to 'Twitter', '#'
+              %li= link_to 'Atom', '#'
+              %li= link_to 'Contact', '#'
 
     .container
 
@@ -39,7 +43,11 @@
           = yield
     
       %footer
-        %p &copy; Company 2012
+        .row
+          .span12
+            %p.pull-right
+              Curated by
+              = link_to 'Aaron Sumner', 'http://www.aaronsumner.com/'
     /
       Javascripts
       \==================================================
