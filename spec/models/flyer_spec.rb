@@ -32,21 +32,28 @@ describe Flyer do
       flyer.lineup = ' Guided by Voices , Breeders'
       flyer.save
       flyer.reload
-      expect(flyer.bands.first.name).to eq 'Guided by Voices'
-      expect(flyer.bands.last.name).to eq 'Breeders'
+      expect(flyer.bands.first.name).to eq 'Breeders'
+      expect(flyer.bands.last.name).to eq 'Guided by Voices'
     end
   end
   
   it "returns a list of band names" do
     flyer.save
     flyer.reload
-    expect(flyer.band_list).to eq 'Guided by Voices, Breeders'
+    expect(flyer.band_list).to eq 'Breeders, Guided by Voices'
   end
   
   it "does not duplicate band associations when saving" do
     flyer.lineup = 'Guided by Voices, Breeders, Guided by Voices'
     flyer.save
     flyer.reload
-    expect(flyer.band_list).to eq 'Guided by Voices, Breeders'
+    expect(flyer.band_list).to eq 'Breeders, Guided by Voices'
+  end
+  
+  it "does not erase band associations if none are provided on update" do
+    flyer.update_attributes({happened_on: 2.days.ago})
+    flyer.save
+    flyer.reload
+    expect(flyer.band_list).to eq 'Breeders, Guided by Voices'
   end
 end

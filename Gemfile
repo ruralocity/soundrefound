@@ -13,6 +13,7 @@ gem 'sass-rails',   '~> 3.2.3'
 gem "simple_form", "~> 2.0.4"
 gem "rmagick", "~> 2.13.1"
 gem "carrierwave", "~> 0.7.0"
+gem "friendly_id", "~> 4.0.9"
 
 # Gems used only for assets and not required
 # in production environments by default.

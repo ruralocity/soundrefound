@@ -11,13 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120223637) do
+ActiveRecord::Schema.define(:version => 20121121193958) do
 
   create_table "bands", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
+
+  add_index "bands", ["slug"], :name => "index_bands_on_slug"
 
   create_table "bands_flyers", :force => true do |t|
     t.integer "band_id"
@@ -34,8 +37,10 @@ ActiveRecord::Schema.define(:version => 20121120223637) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image"
+    t.string   "slug"
   end
 
+  add_index "flyers", ["slug"], :name => "index_flyers_on_slug"
   add_index "flyers", ["venue_id"], :name => "index_flyers_on_venue_id"
 
   create_table "venues", :force => true do |t|
@@ -44,6 +49,9 @@ ActiveRecord::Schema.define(:version => 20121120223637) do
     t.string   "state"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
+
+  add_index "venues", ["slug"], :name => "index_venues_on_slug"
 
 end

@@ -8,6 +8,8 @@ class Flyer < ActiveRecord::Base
   attr_accessor :new_venue_city
   attr_accessor :new_venue_state
 
+  default_scope order(:happened_on)
+
   has_and_belongs_to_many :bands
   belongs_to :venue
 
@@ -16,6 +18,9 @@ class Flyer < ActiveRecord::Base
   validates :happened_on, presence: true
 
   mount_uploader :image, ImageUploader
+
+  extend FriendlyId
+  friendly_id :band_list, use: :slugged
 
   before_save :create_bands
   before_save :create_venue
@@ -27,10 +32,12 @@ class Flyer < ActiveRecord::Base
   private
 
   def create_bands
-    bands.clear
-    lineup.to_s.split(',').each do |band|
-      band = Band.find_or_create_by_name(band.strip)
-      bands << band unless bands.include? band
+    if lineup
+      bands.clear
+      lineup.to_s.split(',').each do |band|
+        band = Band.find_or_create_by_name(band.strip)
+        bands << band unless bands.include? band
+      end
     end
   end
 
