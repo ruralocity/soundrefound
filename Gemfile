@@ -11,6 +11,8 @@ gem 'mysql2'
 gem "haml-rails", "~> 0.3.5"
 gem 'sass-rails',   '~> 3.2.3'
 gem "simple_form", "~> 2.0.4"
+gem "rmagick", "~> 2.13.1"
+gem "carrierwave", "~> 0.7.0"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -37,6 +39,7 @@ end
 group :test do
   gem "shoulda", "~> 3.3.2"
   gem "guard-spork", "~> 1.2.3"
+  gem "launchy"
 end
 
 # To use ActiveModel has_secure_password

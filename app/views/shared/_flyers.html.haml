@@ -2,6 +2,7 @@
   - flyers.each do |flyer|
     %li.span3
       .thumbnail
+        = image_tag flyer.image_url(:thumb) if flyer.image?
         %h2= link_to flyer.band_list, flyer
         = flyer.venue_full_name
         = flyer.happened_on.strftime('%B %d, %Y')

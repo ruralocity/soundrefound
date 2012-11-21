@@ -1,4 +1,4 @@
-= simple_form_for(@flyer) do |f|
+= simple_form_for(@flyer, :html => {:multipart => true}) do |f|
   = f.error_notification
 
   .form-inputs
@@ -10,6 +10,7 @@
       = f.input :new_venue_name, label: 'Name'
       = f.input :new_venue_city, label: 'City'
       = f.input :new_venue_state, label: 'State'
+    = f.input :image, as: :file
     = f.input :notes
 
   .form-actions

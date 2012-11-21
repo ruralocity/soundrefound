@@ -8,5 +8,12 @@ class CreateFlyers < ActiveRecord::Migration
       t.timestamps
     end
     add_index :flyers, :venue_id
+
+    create_table :bands_flyers do |t|
+      t.references :band
+      t.references :flyer
+    end
+    add_index :bands_flyers, :band_id
+    add_index :bands_flyers, :flyer_id
   end
 end

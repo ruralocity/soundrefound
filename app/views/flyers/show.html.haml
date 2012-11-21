@@ -3,6 +3,9 @@
 %h1= @flyer.band_list
 
 %p
+  = image_tag @flyer.image_url(:medium)
+
+%p
   %b Happened on:
   = @flyer.happened_on.strftime('%B %d, %Y')
 %p

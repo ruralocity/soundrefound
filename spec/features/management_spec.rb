@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "flyer management" do
+feature "flyer management" do  
   scenario "adding a flyer" do
     visit root_url
     click_link 'New Flyer'
@@ -12,7 +12,7 @@ feature "flyer management" do
       fill_in 'City', with: 'Lawrence'
       fill_in 'State', with: 'KS'
     end
-    # upload file
+    attach_file "Image", 'spec/factories/test.jpg'
     click_button 'Create Flyer'
 
     page.should have_content 'Successfully created flyer.'
@@ -40,7 +40,7 @@ feature "flyer management" do
       fill_in 'City', with: 'Lawrence'
       fill_in 'State', with: 'Kansas'
     end
-    # upload file
+    attach_file "Image", 'spec/factories/test.jpg'
     click_button 'Update Flyer'
     
     page.should have_content 'Successfully updated flyer.'

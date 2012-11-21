@@ -1,6 +1,6 @@
 class Flyer < ActiveRecord::Base
   belongs_to :venue
-  attr_accessible :happened_on, :venue_id, :lineup, :notes,
+  attr_accessible :happened_on, :venue_id, :image, :lineup, :notes,
     :new_venue_name, :new_venue_city, :new_venue_state
 
   attr_accessor :lineup
@@ -14,6 +14,8 @@ class Flyer < ActiveRecord::Base
   delegate :full_name, to: :venue, prefix: true
 
   validates :happened_on, presence: true
+
+  mount_uploader :image, ImageUploader
 
   before_save :create_bands
   before_save :create_venue
