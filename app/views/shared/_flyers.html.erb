@@ -1,0 +1,23 @@
+<% count = 0 %>
+
+<% flyers.each do |flyer| %>
+  <% if count % 4 == 0 %>
+    <!-- NEW ROW, YO -->
+    <div class="row">
+    <% count+= 1 %>
+  <% end %>
+  
+    <div class="span3 flyer-thumb">
+      <%= link_to (image_tag flyer.image_url(:thumb)), flyer %>
+      <div class="description">
+        <strong><%= flyer.band_list %></strong>
+        <%= flyer.venue_full_name %>.
+        <%= flyer.happened_on.strftime('%B %d, %Y') %>
+      </div>
+    </div>
+  
+  <% if (count % 4 == 0) or (flyer == flyers.last) %>
+    </div>
+    <!-- END OF ROW, YO -->
+  <% end %>
+<% end %>

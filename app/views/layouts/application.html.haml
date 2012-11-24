@@ -18,29 +18,31 @@
     %link(href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css')
 
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand(href=root_url) Sound Refound
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "By Band", bands_path
-              %li= link_to "By Venue", venues_path
-            %ul.nav.pull-right
-              %li= link_to 'Twitter', '#'
-              %li= link_to 'Atom', '#'
-              %li= link_to 'Contact', '#'
-
     .container
+      .navbar.navbar-static-top
+        .navbar-inner
+          .container
+            %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.brand(href=root_url) Sound Refound
+            .container.nav-collapse
+              %ul.nav
+                %li= link_to "By Band", bands_path
+                %li= link_to "By Venue", venues_path
+                %li= link_to 'New Flyer', new_flyer_path
+              %ul.nav.pull-right
+                %li= link_to 'Twitter', '#'
+                %li= link_to 'Atom', '#'
+                %li= link_to 'Contact', '#'
+
+    #content.container
 
       .row
         .span12
           = bootstrap_flash
-          = yield
+      = yield
     
       %footer
         .row

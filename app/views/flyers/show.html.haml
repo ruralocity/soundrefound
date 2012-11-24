@@ -1,18 +1,19 @@
 %p#notice= notice
 
-%h1= @flyer.band_list
+.row
+  .span4
+    %p
+      = image_tag @flyer.image_url(:medium)
+  .span8
+    %h1= @flyer.band_list
 
-%p
-  = image_tag @flyer.image_url(:medium)
+    %p
+      = @flyer.venue_full_name
 
-%p
-  %b Happened on:
-  = @flyer.happened_on.strftime('%B %d, %Y')
-%p
-  %b Venue:
-  = @flyer.venue_full_name
-%p
-  %b Notes:
-  = @flyer.notes
+    %p
+      = @flyer.happened_on.strftime('%B %d, %Y')
 
-= link_to 'Edit', edit_flyer_path(@flyer), class: 'btn btn-primary'
+    = simple_format @flyer.notes
+
+    %p
+      = link_to 'Edit', edit_flyer_path(@flyer), class: 'btn btn-primary'
