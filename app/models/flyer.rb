@@ -29,6 +29,10 @@ class Flyer < ActiveRecord::Base
     bands.pluck(:name).join(', ')
   end
 
+  def full_description
+    [band_list, venue_full_name, happened_on.strftime('%B %d, %Y')].join(', ')
+  end
+
   private
 
   def create_bands

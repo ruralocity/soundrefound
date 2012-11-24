@@ -1,3 +1,6 @@
+- content_for(:title) { 'Bands' }
+
 %ul
   - @bands.each do |band|
-    %li= link_to band.name, band
+    - unless band.flyers.empty?
+      %li= link_to band.name, band

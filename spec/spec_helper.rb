@@ -16,7 +16,7 @@ Spork.prefork do
 
     config.infer_base_class_for_anonymous_controllers = false
 
-    config.order = "random"
+    # config.order = "random"
 
     # Clean up Carrierwave test uploads
     config.after(:all) do

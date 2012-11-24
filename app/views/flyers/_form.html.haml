@@ -2,7 +2,7 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :lineup
+    = f.input :lineup, input_html: { value: @flyer.band_list }
     = f.input :happened_on, label: 'Date', as: :string
     #venue
       = f.association :venue

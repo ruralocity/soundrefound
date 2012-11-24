@@ -5,7 +5,13 @@ describe Flyer do
   it { should belong_to :venue }
   it { should have_and_belong_to_many :bands }
 
-  let(:venue) { mock_model(Venue) }
+  # let(:venue) { mock_model(Venue) }
+  let(:venue) {
+    FactoryGirl.create(:venue,
+      name: 'Bottleneck',
+      city: 'Lawrence',
+      state: 'KS')
+  }
   let(:flyer) {
     Flyer.new(
       lineup: 'Guided by Voices, Breeders',
@@ -41,6 +47,12 @@ describe Flyer do
     flyer.save
     flyer.reload
     expect(flyer.band_list).to eq 'Breeders, Guided by Voices'
+  end
+  
+  it "returns a full description of the band list, venue and date" do
+    flyer.save
+    flyer.reload
+    expect(flyer.full_description).to eq 'Breeders, Guided by Voices, Bottleneck, Lawrence KS, October 10, 2010'
   end
   
   it "does not duplicate band associations when saving" do

@@ -1,14 +1,14 @@
-%p#notice= notice
+- content_for(:title) { @flyer.full_description }
 
 .row
-  .span4
+  .flyer-medium.span4
     %p
-      = image_tag @flyer.image_url(:medium)
+      = link_to (image_tag @flyer.image_url(:medium)), @flyer.image_url
   .span8
-    %h1= @flyer.band_list
+    %h1= raw @flyer.bands.map {|b| link_to b.name, b }.join(', ')
 
     %p
-      = @flyer.venue_full_name
+      = link_to @flyer.venue_full_name, @flyer.venue
 
     %p
       = @flyer.happened_on.strftime('%B %d, %Y')
