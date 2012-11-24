@@ -3,7 +3,7 @@
 .row
   .flyer-medium.span4
     %p
-      = link_to (image_tag @flyer.image_url(:medium)), @flyer.image_url
+      = link_to (image_tag @flyer.image_url(:medium)), @flyer.image_url, data: { colorbox: true }
   .span8
     %h1= raw @flyer.bands.map {|b| link_to b.name, b }.join(', ')
 

@@ -10,6 +10,8 @@ gem 'mysql2'
 
 gem "haml-rails", "~> 0.3.5"
 gem 'sass-rails',   '~> 3.2.3'
+gem 'colorbox-rails', '~> 0.0.9'
+
 gem "simple_form", "~> 2.0.4"
 gem "rmagick", "~> 2.13.1"
 gem "carrierwave", "~> 0.7.0"
