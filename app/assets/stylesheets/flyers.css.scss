@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#blurb {
+  font-size: 300%;
+  line-height: 160%;
+  margin-bottom: 40px;
+  text-align: justify;
+  color: #ccc;
+  font-weight: 100;
+}
+
 .flyer-thumb {
   height: 300px;
    img {
