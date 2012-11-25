@@ -92,5 +92,6 @@ feature "browsing the site" do
     expect(page).to have_content 'Graceland, Seattle WA'
     expect(page).to have_content 'A great show at the Graceland.'
     expect(page).to have_xpath("//img[@src='#{spoon_graceland_flyer.image_url(:medium)}']")
+    expect(page).to_not have_content 'Edit'
   end
 end

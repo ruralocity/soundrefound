@@ -16,7 +16,8 @@ Spork.prefork do
 
     config.infer_base_class_for_anonymous_controllers = false
 
-    # config.order = "random"
+    config.include Devise::TestHelpers, :type => :controller
+    config.include ControllerMacros, :type => :controller
 
     # Clean up Carrierwave test uploads
     config.after(:all) do

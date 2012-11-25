@@ -15,5 +15,6 @@
 
     = simple_format @flyer.notes
 
-    %p
-      = link_to 'Edit', edit_flyer_path(@flyer), class: 'btn btn-primary'
+    - if user_signed_in?
+      %p
+        = link_to 'Edit', edit_flyer_path(@flyer), class: 'btn btn-primary'

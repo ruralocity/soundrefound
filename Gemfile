@@ -17,6 +17,8 @@ gem "rmagick", "~> 2.13.1"
 gem "carrierwave", "~> 0.7.0"
 gem "friendly_id", "~> 4.0.9"
 
+gem 'devise', "~> 2.1.2"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

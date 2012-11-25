@@ -1,6 +1,14 @@
 require 'spec_helper'
 
-feature "flyer management" do  
+feature "flyer management" do
+  before :each do
+    user = FactoryGirl.create(:user)
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign in'
+  end
+
   scenario "adding a flyer" do
     visit root_url
     click_link 'New Flyer'

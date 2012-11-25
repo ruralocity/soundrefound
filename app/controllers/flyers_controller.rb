@@ -1,5 +1,7 @@
 class FlyersController < ApplicationController
-  
+
+  before_filter :authenticate_user!, except: [ :index, :show ]
+
   # GET /flyers
   # GET /flyers.json
   def index
@@ -42,14 +44,11 @@ class FlyersController < ApplicationController
   # POST /flyers.json
   def create
     @flyer = Flyer.new(params[:flyer])
-    respond_to do |format|
-      if @flyer.save
-        format.html { redirect_to @flyer, notice: 'Successfully created flyer.' }
-        format.json { render json: @flyer, status: :created, location: @flyer }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @flyer.errors, status: :unprocessable_entity }
-      end
+
+    if @flyer.save
+      redirect_to @flyer, notice: 'Successfully created flyer.'
+    else
+      render action: "new"
     end
   end
 
@@ -58,26 +57,10 @@ class FlyersController < ApplicationController
   def update
     @flyer = Flyer.find(params[:id])
 
-    respond_to do |format|
-      if @flyer.update_attributes(params[:flyer])
-        format.html { redirect_to @flyer, notice: 'Successfully updated flyer.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @flyer.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /flyers/1
-  # DELETE /flyers/1.json
-  def destroy
-    @flyer = Flyer.find(params[:id])
-    @flyer.destroy
-
-    respond_to do |format|
-      format.html { redirect_to flyers_url }
-      format.json { head :no_content }
+    if @flyer.update_attributes(params[:flyer])
+      redirect_to @flyer, notice: 'Successfully updated flyer.'
+    else
+      render action: "edit"
     end
   end
 end

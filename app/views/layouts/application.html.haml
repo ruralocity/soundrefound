@@ -30,7 +30,9 @@
               %ul.nav
                 %li= link_to "By Band", bands_path
                 %li= link_to "By Venue", venues_path
-                %li= link_to 'New Flyer', new_flyer_path
+                - if user_signed_in?
+                  %li= link_to 'New Flyer', new_flyer_path
+                  %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
               %ul.nav.pull-right
                 %li= link_to 'Twitter', '#'
                 %li= link_to 'Atom', '#'
