@@ -4,11 +4,21 @@ describe FlyersController do
   let(:flyer) { FactoryGirl.create(:flyer) }
 
   describe '#index' do
-    before :each do
-      get :index
+    context 'html format' do
+      before :each do
+        get :index
+      end
+
+      it { should render_template(:index) }
     end
 
-    it { should render_template(:index) }
+    context 'atom format' do
+      before :each do
+        get :index, format: :atom
+      end
+
+      it { should respond_with_content_type(:atom) }
+    end
   end
 
   describe '#show' do

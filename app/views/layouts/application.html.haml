@@ -34,9 +34,8 @@
                   %li= link_to 'New Flyer', new_flyer_path
                   %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
               %ul.nav.pull-right
-                %li= link_to 'Twitter', '#'
-                %li= link_to 'Atom', '#'
-                %li= link_to 'Contact', '#'
+                %li= link_to 'Twitter', 'http://twitter.com/soundrefound'
+                %li= link_to 'Atom', flyers_url(format: :atom)
 
     #content.container
 
