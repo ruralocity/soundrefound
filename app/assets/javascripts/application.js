@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require colorbox-rails
-//= require analytics
 //= require_tree .
