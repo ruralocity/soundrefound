@@ -16,3 +16,6 @@ config/database.yml
 
 # Ignore file uploads
 public/uploads
+
+# Ignore precompiled assets
+system/assets
