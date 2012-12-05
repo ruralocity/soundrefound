@@ -18,4 +18,4 @@ config/database.yml
 public/uploads
 
 # Ignore precompiled assets
-system/assets
+public/assets
