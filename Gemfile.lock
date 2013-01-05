@@ -272,7 +272,7 @@ DEPENDENCIES
   rails (= 3.2.10)
   rb-fsevent (~> 0.9.1)
   rspec-rails (~> 2.12.0)
-  rvm-capistrano
+  rvm-capistrano (~> 1.2.7)
   sass-rails (~> 3.2.3)
   secret_token_replacer!
   shoulda (~> 3.3.2)
