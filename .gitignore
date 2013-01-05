@@ -19,3 +19,6 @@ public/uploads
 
 # Ignore precompiled assets
 public/assets
+
+# Ignore RVM config
+.rvmrc
