@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   include Sprockets::Helpers::RailsHelper
 
@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_limit => [200, 200]
   end
-  
+
   version :medium do
     process :resize_to_limit => [450, 450]
   end

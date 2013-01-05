@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
 
 
@@ -13,7 +10,7 @@ gem 'sass-rails',   '~> 3.2.3'
 gem 'colorbox-rails', '~> 0.0.9'
 
 gem "simple_form", "~> 2.0.4"
-gem "rmagick", "~> 2.13.1"
+gem "mini_magick", "~> 3.4"
 gem "carrierwave", "~> 0.7.0"
 gem "friendly_id", "~> 4.0.9"
 
