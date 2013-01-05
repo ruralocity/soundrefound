@@ -1,5 +1,6 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
+require 'secret_token_replacer/recipes'
 
 set :application, "soundrefound"
 set :repository,  "https://github.com/ruralocity/soundrefound.git"

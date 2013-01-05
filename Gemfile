@@ -15,6 +15,7 @@ gem "carrierwave", "~> 0.7.0"
 gem "friendly_id", "~> 4.0.9"
 
 gem 'devise', "~> 2.1.2"
+gem 'secret_token_replacer', :git => 'git://github.com/digineo/secret_token_replacer.git'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
