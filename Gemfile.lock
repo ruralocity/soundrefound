@@ -265,6 +265,7 @@ DEPENDENCIES
   guard-spork (~> 1.2.3)
   haml-rails (~> 0.3.5)
   jquery-rails
+  json (~> 1.7.7)
   launchy
   less-rails (~> 2.2.6)
   mini_magick (~> 3.4)
