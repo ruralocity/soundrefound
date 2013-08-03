@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rack', '~> 1.4.5'
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.14'
 gem 'json', '~> 1.7.7'
 
 gem 'mysql2'
@@ -40,7 +40,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "shoulda", "~> 3.3.2"
+  gem "shoulda-matchers", "~> 2.2.0"
   gem "guard-spork", "~> 1.2.3"
   gem "launchy"
 end

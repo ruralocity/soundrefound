@@ -17,7 +17,9 @@ describe FlyersController do
         get :index, format: :atom
       end
 
-      it { should respond_with_content_type(:atom) }
+      it 'returns atom format' do
+        response.header['Content-Type'].should include 'application/atom+xml'
+      end
     end
   end
 
@@ -27,7 +29,6 @@ describe FlyersController do
     end
 
     it { should render_template(:show) }
-    it { should assign_to(:flyer) }
   end
 
   describe '#new' do
@@ -54,7 +55,7 @@ describe FlyersController do
       before :each do
         login_user
       end
-      
+
       context 'valid attributes' do
         it "persists a flyer" do
           expect {
@@ -134,7 +135,7 @@ describe FlyersController do
       context 'invalid attributes' do
         before :each do
           put :update, flyer: { happened_on: nil }, id: flyer.id
-        end 
+        end
 
         it { should render_template :edit }
       end
