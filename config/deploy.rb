@@ -5,7 +5,7 @@ require 'secret_token_replacer/recipes'
 set :application, "soundrefound"
 set :repository,  "https://github.com/ruralocity/soundrefound.git"
 
-set :rvm_ruby_string, '1.9.3-p448'
+set :rvm_ruby_string, '2.1.2'
 set :rvm_type, :system
 
 set :deploy_to,   "/var/www/#{application}"

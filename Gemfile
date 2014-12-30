@@ -21,7 +21,7 @@ gem 'secret_token_replacer', :git => 'git://github.com/digineo/secret_token_repl
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', '0.12.1', :platforms => :ruby
   gem 'less-rails', '~> 2.2.6'
   gem 'uglifier', '>= 1.0.3'
   gem "twitter-bootstrap-rails", "~> 2.2.0"
