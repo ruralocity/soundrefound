@@ -15,9 +15,6 @@
 
     = simple_format @flyer.notes
 
-    = render 'shared/amazon_quick_linker'
-    = amazon_search_links(@flyer.bands.map {|b| b.name })
-
     - if user_signed_in?
       %p
         = link_to 'Edit', edit_flyer_path(@flyer), class: 'btn btn-primary'
